@@ -42,7 +42,7 @@ def create_csv(folder_path: str, symbol: str, request: TradingViewData):
     """Genera un archivo CSV con los datos de la criptomoneda y verifica su integridad."""
 
     df: pd.DataFrame = request.get_hist(
-        symbol=symbol, exchange="CRYPTO", interval=Interval.daily, n_bars=4 * 365
+        symbol=symbol, exchange="Coinbase", interval=Interval.daily, n_bars=4 * 365
     ).reset_index()
 
     file_path = os.path.join(folder_path, f"{symbol}.csv")
